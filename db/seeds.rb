@@ -52,6 +52,25 @@ Factory.define :howard, :parent => :person do |p|
   p.is_student 1
 end
 
+Factory.define :isuru, :parent => :person do |p|
+  p.persistence_token Time.now.to_f.to_s
+  p.first_name "Isuru"
+  p.last_name "Warnakulasooriya"
+  p.human_name "Isuru Warn"
+  p.email "isuru.warnakulasooriya@sv.cmu.edu"
+  p.is_student 1
+end
+
+
+Factory.define :arlette, :parent => :person do |p|
+  p.persistence_token Time.now.to_f.to_s
+  p.first_name "Arlette"
+  p.last_name "Umuhoza"
+  p.human_name "Arlette Umuhoza"
+  p.email "arlette.umuhoza@sv.cmu.edu"
+  p.is_student 1
+end
+
 
 Factory.define :awe_smith, :parent => :person do |p|
   p.is_student 1
@@ -140,6 +159,8 @@ martin = Factory.create(:martin)
 Factory.create(:ed)
 Factory.create(:chris)
 Factory.create(:howard)
+Factory.create(:isuru)
+Factory.create(:arlette)
 Factory.create(:awe_smith)
 Factory.create(:betty_ross)
 Factory.create(:charlie_moss)
