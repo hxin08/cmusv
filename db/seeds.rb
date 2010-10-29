@@ -8,7 +8,6 @@ Factory.define :person, :class => Person do |p|
 end
 
 Factory.define :todd, :parent => :person  do |p|
-  p.persistence_token Time.now.to_f.to_s
   p.first_name "Todd"
   p.last_name "Sedano"
   p.human_name "Todd Sedano"
@@ -17,7 +16,6 @@ Factory.define :todd, :parent => :person  do |p|
 end
 
 Factory.define :martin, :parent => :person do |p|
-  p.persistence_token Time.now.to_f.to_s
   p.first_name "Martin"
   p.last_name "Radley"
   p.human_name "Martin Radley"
@@ -26,7 +24,6 @@ Factory.define :martin, :parent => :person do |p|
 end
 
 Factory.define :ed, :parent => :person do |p|
-  p.persistence_token Time.now.to_f.to_s
   p.first_name "Ed"
   p.last_name "Katz"
   p.human_name "Ed Katz"
@@ -35,7 +32,6 @@ Factory.define :ed, :parent => :person do |p|
 end
 
 Factory.define :chris, :parent => :person do |p|
-  p.persistence_token Time.now.to_f.to_s
   p.first_name "Chris"
   p.last_name "Jensen"
   p.human_name "Chris Jensen"
@@ -44,7 +40,6 @@ Factory.define :chris, :parent => :person do |p|
 end
 
 Factory.define :howard, :parent => :person do |p|
-  p.persistence_token Time.now.to_f.to_s
   p.first_name "Howard"
   p.last_name "Huang"
   p.human_name "Howard Awesome Huang"
@@ -134,6 +129,21 @@ Factory.define :ian_zhang, :parent => :person do |p|
   p.webiso_account "yz3@andrew.cmu.edu"
 end
 
+Factory.define :asem_radhwi, :parent => :person do |p|
+  p.is_student 1
+  p.is_part_time 0
+  p.graduation_year "2011"
+  p.masters_program  "SE"
+  p.masters_track  "Tech"
+  p.twiki_name "AsemRadhwi"
+  p.first_name "Asem"
+  p.last_name "Radhwi"
+  p.human_name "Asem Radhwi"
+  p.image_uri "/images/mascot.jpg"
+  p.email "asem.radhwi@sv.cmu.edu"
+  p.webiso_account "aradhwi@andrew.cmu.edu"
+end
+
 
 Factory.create(:todd)
 martin = Factory.create(:martin)
@@ -144,6 +154,7 @@ Factory.create(:awe_smith)
 Factory.create(:betty_ross)
 Factory.create(:charlie_moss)
 Factory.create(:ian_zhang)
+Factory.create(:asem_radhwi)
 
 architecture = Factory.create(:architecture)
 
