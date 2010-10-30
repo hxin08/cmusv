@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100930025344) do
+ActiveRecord::Schema.define(:version => 20101030001718) do
 
   create_table "course_numbers", :force => true do |t|
     t.string   "name"
@@ -71,6 +71,23 @@ ActiveRecord::Schema.define(:version => 20100930025344) do
     t.datetime "locked_at"
     t.datetime "failed_at"
     t.text     "locked_by"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "deliverables", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.string   "deliverable_type"
+    t.integer  "person_id"
+    t.integer  "team_id"
+    t.integer  "course_id"
+    t.integer  "task_number"
+    t.text     "comments"
+    t.string   "deliverable_file_name"
+    t.string   "deliverable_content_type"
+    t.integer  "deliverable_file_size"
+    t.datetime "deliverable_updated_at"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
