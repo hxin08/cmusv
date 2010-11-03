@@ -13,6 +13,11 @@ Factory.define :todd, :parent => :person  do |p|
   p.last_name "Sedano"
   p.human_name "Todd Sedano"
   p.email "todd.sedano@sv.cmu.edu"
+  p.organization_name "Carnegie Mellon"
+  p.local_near_remote "Local"
+  p.work_state "California"
+  p.image_uri "/images/tsedano.jpg"
+  p.tigris "tsedano"
   p.is_staff 1
 end
 
@@ -22,6 +27,11 @@ Factory.define :martin, :parent => :person do |p|
   p.last_name "Radley"
   p.human_name "Martin Radley"
   p.email "martin.radley@sv.cmu.edu"
+  p.organization_name "Carnegie Mellon"
+  p.local_near_remote "Remote"
+  p.work_state "Colorao"
+  p.image_uri "/images/mascot.jpg"
+  p.tigris "mradley"
   p.is_staff 1
 end
 
@@ -31,6 +41,11 @@ Factory.define :ed, :parent => :person do |p|
   p.last_name "Katz"
   p.human_name "Ed Katz"
   p.email "ed.katz@sv.cmu.edu"
+  p.organization_name "Carnegie Mellon"
+  p.local_near_remote "Local"
+  p.work_state "California"
+  p.image_uri "/images/ekatz.jpg"
+  p.tigris ""
   p.is_staff 1
 end
 
@@ -39,7 +54,15 @@ Factory.define :chris, :parent => :person do |p|
   p.first_name "Chris"
   p.last_name "Jensen"
   p.human_name "Chris Jensen"
+  p.masters_program  "SE"
+  p.masters_track  "Tech"
   p.email "chris.jensen@sv.cmu.edu"
+  p.organization_name "Disney"
+  p.local_near_remote "Local"
+  p.work_state "California"
+  p.image_uri "/images/cjensen.jpg"
+  p.tigris "cjenson"
+  p.is_part_time 0
   p.is_student 1
 end
 
@@ -49,6 +72,14 @@ Factory.define :howard, :parent => :person do |p|
   p.last_name "Huang"
   p.human_name "Howard Awesome Huang"
   p.email "howard.huang@sv.cmu.edu"
+  p.masters_program  "SE"
+  p.masters_track  "Tech"
+  p.organization_name ""
+  p.local_near_remote "Local"
+  p.work_state "California"
+  p.image_uri "/images/mascot.jpg"
+  p.tigris "hhuang"
+  p.is_part_time 0
   p.is_student 1
 end
 
@@ -58,6 +89,14 @@ Factory.define :isuru, :parent => :person do |p|
   p.last_name "Warnakulasooriya"
   p.human_name "Isuru Warn"
   p.email "isuru.warnakulasooriya@sv.cmu.edu"
+  p.organization_name "Virtusa"
+  p.local_near_remote "Local"
+  p.work_state "California"
+  p.image_uri "/images/iwarn.jpg"
+  p.masters_program  "SE"
+  p.masters_track  "Tech"
+  p.tigris ""
+  p.is_part_time 0
   p.is_student 1
 end
 
@@ -68,6 +107,12 @@ Factory.define :arlette, :parent => :person do |p|
   p.last_name "Umuhoza"
   p.human_name "Arlette Umuhoza"
   p.email "arlette.umuhoza@sv.cmu.edu"
+  p.organization_name ""
+  p.local_near_remote "Local"
+  p.work_state "California"
+  p.image_uri "/images/mascot.jpg"
+  p.tigris ""
+  p.is_part_time 0
   p.is_student 1
 end
 
@@ -83,8 +128,12 @@ Factory.define :awe_smith, :parent => :person do |p|
   p.last_name "Smith"
   p.human_name "Awe Smith"
   p.image_uri "/images/mascot.jpg"
-  p.email "awe.smith@sv.cmu.edu"
+  p.email "awesm@yahoo.com"
   p.webiso_account "awesm@andrew.cmu.edu"
+  p.organization_name "Electronic Arts"
+  p.local_near_remote "Remote"
+  p.work_state "New York"
+  p.tigris ""
 end
 
 Factory.define :betty_ross, :parent => :person do |p|
@@ -97,9 +146,13 @@ Factory.define :betty_ross, :parent => :person do |p|
   p.first_name "Betty"
   p.last_name "Ross"
   p.human_name "Betty Ross"
-  p.image_uri "/images/mascot.jpg"
-  p.email "betty.ross@sv.cmu.edu"
+  p.image_uri "/images/bross.jpg"
+  p.email "bross@gmail.com"
   p.webiso_account "bross@andrew.cmu.edu"
+  p.organization_name "Google"
+  p.local_near_remote "Near"
+  p.work_state "Arizona"
+  p.tigris "bross"
 end
 
 Factory.define :charlie_moss, :parent => :person do |p|
@@ -112,9 +165,13 @@ Factory.define :charlie_moss, :parent => :person do |p|
   p.first_name "Charlie"
   p.last_name "Moss"
   p.human_name "Charlie Moss"
-  p.image_uri "/images/mascot.jpg"
-  p.email "charlie.moss@sv.cmu.edu"
+  p.image_uri "/images/cmoss.jpg"
+  p.email "cmoss@hotmail.com"
   p.webiso_account "cmoss@andrew.cmu.edu"
+  p.organization_name "Yahoo"
+  p.local_near_remote "Near"
+  p.work_state "Ohio"
+  p.tigris "cmoss"
 end
 
 

@@ -17,7 +17,7 @@ $(document).ready(function()
                                         sortList: [[0,0], [1,0]]})
             .tablesorterFilter({ filterContainer: $("#filterBoxOne"),
                 filterClearContainer: $("#filterClearOne"),
-                filterColumns: [0, 1, 3, 4, 5],
+                filterColumns: [0, 1, 3, 4, 5, 6,7,8,9,10,11],
                 filterCaseSensitive: false
             });        
 
@@ -86,7 +86,7 @@ function updateImage(uri,label)
   <div id='image_box_label'></div>
 </div>
 
-<table id="people_table" class="tablesorter">
+<table id="people_table" class="tablesorter" border="0" width="120%">
   <thead>
   <tr>
     <th>First name</th>
@@ -95,6 +95,13 @@ function updateImage(uri,label)
     <th>Graduation year</th>
     <th>Graduate program</th>
     <th>Graduate track</th>
+    <th>Type</th>
+    <th>Organization</th>
+    <th>Location</th>
+    <th>State</th>
+    <th>Image</th>
+    <th>CMSV Email</th>
+    <th>Tigris</th>
   </tr>
 </thead>
 <tbody>
@@ -112,6 +119,13 @@ function updateImage(uri,label)
     <td><%=h person.graduation_year %></td>
     <td><%=h person.masters_program %></td>
     <td><%=h person.masters_track %></td>
+    <td><%=h person.is_part_time ? "Part-time" : "Full-time" %></td>
+    <td><%=h person.organization_name %></td>
+    <td><%=h person.local_near_remote %></td>
+    <td><%=h person.work_state %></td>
+    <td><%=h person.image_uri == "/images/mascot.jpg" ? "Default" : "Added" %></td>
+    <td><%=h person.email %></td>
+    <td><%=h person.tigris %></td>
     <td><%= link_to 'Show', person %></td>
 <% if current_user && current_user.is_staff? %>
     <td><%= link_to 'Edit', edit_person_path(person) %></td>

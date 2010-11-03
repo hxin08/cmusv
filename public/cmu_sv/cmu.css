@@ -608,11 +608,11 @@ input.admin_searchInputStyle{vertical-align:bottom; width:112px; height:17px; fo
 
 /*ADMIN 2 Column Level Template Content Area */
 /* .admin_2ColLevelContentBG{background-image: url(https://www.cmu.edu/common/images/lvl_2colContentBG.gif); background-repeat: repeat-y;} */
-.admin_2ColLevelContentBG{background-image: url(lvl_2colContentBG.gif); background-repeat: repeat-y;}
+.admin_2ColLevelContentBG{background-image: url(lvl_2colContentBG.gif); width:150%; background-repeat: repeat-y; }
 .admin_2ColLevelContentBG_Plain{background-color: #ffffff;}
 .admin_2ColLevelContent_Padding{margin:0px 0px 0px 0px; padding:0px 20px 5px 22px;}
 .admin_2ColLevelContent_Padding_Plain{margin:0px 0px 0px 0px; padding:0px 20px 5px 22px;}
-#admin_2ColLevelContent{font-family:Verdana, Arial, Helvetica, sans-serif; font-size:11px; color:#424545; padding:0px; margin:0px; width:685px; overflow:hidden;}
+#admin_2ColLevelContent{font-family:Verdana, Arial, Helvetica, sans-serif; font-size:11px; color:#424545; padding:0px; margin:0px; width:100%; overflow:hidden;}
 
 #admin_2ColLevelContent img{padding:3px; border:0px;}
 #admin_2ColLevelContent p{font-family:Verdana, Arial, Helvetica, sans-serif; color:#424545;text-decoration:none; font-weight:normal; padding:0px 0px 8px 0px; margin:0px 0px 0px 0px;}
