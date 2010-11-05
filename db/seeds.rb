@@ -114,19 +114,27 @@ Factory.define :team_triumphant, :class => Team do |t|
  t.person_name3 "Charlie Moss"
 end
 
-Factory.define :ian_zhang, :parent => :person do |p|
-  p.is_student 1
-  p.is_part_time 0
-  p.graduation_year "2011"
-  p.masters_program  "SE"
-  p.masters_track  "Tech"
-  p.twiki_name "IanZhang"
-  p.first_name "Ian"
+#Factory.define :ian_zhang, :parent => :person do |p|
+#  p.is_student 1
+#  p.is_part_time 0
+#  p.graduation_year "2011"
+#  p.masters_program  "SE"
+#  p.masters_track  "Tech"
+#  p.twiki_name "IanZhang"
+#  p.first_name "Ian"
+#  p.last_name "Zhang"
+#  p.human_name "Ian Zhang"
+#  p.image_uri "/images/mascot.jpg"
+#  p.email "ian.zhang@sv.cmu.edu"
+#  p.webiso_account "yz3@andrew.cmu.edu"
+#end
+
+Factory.define :yu, :parent => :person  do |p|
+  p.first_name "yu"
   p.last_name "Zhang"
-  p.human_name "Ian Zhang"
-  p.image_uri "/images/mascot.jpg"
+  p.human_name "yu Zhang"
   p.email "ian.zhang@sv.cmu.edu"
-  p.webiso_account "yz3@andrew.cmu.edu"
+  p.is_staff 1
 end
 
 Factory.define :asem_radhwi, :parent => :person do |p|
@@ -153,8 +161,9 @@ Factory.create(:howard)
 Factory.create(:awe_smith)
 Factory.create(:betty_ross)
 Factory.create(:charlie_moss)
-Factory.create(:ian_zhang)
+#Factory.create(:ian_zhang)
 Factory.create(:asem_radhwi)
+Factory.create(:yu)
 
 architecture = Factory.create(:architecture)
 
