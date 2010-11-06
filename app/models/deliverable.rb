@@ -1,14 +1,26 @@
 class Deliverable < ActiveRecord::Base
-  validates_presence_of :deliverable_updated_at, :person_id, :deliverable_file_name, :deliverable_type
-  validate :team_id_should_be_present
+  validates_presence_of :person_id, :deliverable_type, :team_id
+  validates_attachment_presence :deliverable
+  validates_attachment_content_type :deliverable, :content_type=>['application/zip']
+  validate :is_student
 
 
-  DELIVERABLE_TYPES = ["Team", "Individual", "Feedback"]
+  has_attached_file :deliverable,
+      :storage => :s3,
+      :s3_credentials => "#{RAILS_ROOT}/config/amazon_s3.yml",
+      :path => "deliverable_submissions/Ant/:id/:filename"
+#      :url => "/deliverables/:basename.:extension",
+#      :path => ":rails_root/public/:basename.:extension"
 
-  protected
-  def team_id_should_be_present
-    if  deliverable_type == "Team" && team_id.nil?
-      errors.add(:team_id,"should be selected")
+  DELIVERABLE_TYPES = ["Team", "Individual"]
+
+  def is_student
+    if person_id.nil?
+      return
+    end
+
+    if !Person.find_by_id(person_id).is_student
+      errors.add :person_id, 'Only a student can submit a deliverable'
     end
   end
   

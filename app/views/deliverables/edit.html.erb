@@ -1,12 +1,13 @@
-<h1>Editing deliverable</h1>
-
-<% form_for(@deliverable) do |f| %>
-  <%= f.error_messages %>
-
-  <p>
-    <%= f.submit 'Update' %>
-  </p>
+<% content_for :title, "Edit Deliverable" %>
+<% content_for :head do %>
+<%# javascript_include_tag :defaults, :cache => true %>
+<%= javascript_include_tag 'prototype' %>
 <% end %>
 
-<%= link_to 'Show', @deliverable %> |
+<h1>Edit Deliverable</h1>
+
+<%= render :partial => "edit_form",:locals => { :button_name => "Edit" } %>
+
 <%= link_to 'Back', deliverables_path %>
+<br/>
+<br/>

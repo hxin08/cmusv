@@ -1,4 +1,6 @@
 class DeliverablesController < ApplicationController
+
+  layout 'cmu_sv'
   # GET /deliverables
   # GET /deliverables.xml
   def index

@@ -1,3 +1,62 @@
+<p>
+  <b>Name:</b>
+  <%=h @deliverable.name %>
+</p>
+
+<p>
+  <b>Comments:</b>
+  <%=h @deliverable.comments %>
+</p>
+
+<p>
+  <b>Deliverable type:</b>
+  <%=h @deliverable.deliverable_type %>
+</p>
+
+<p>
+  <b>Person:</b>
+  <%=h @deliverable.person_id %>
+</p>
+
+<p>
+  <b>Team:</b>
+  <%=h @deliverable.team_id %>
+</p>
+
+<p>
+  <b>Course:</b>
+  <%=h @deliverable.course_id %>
+</p>
+
+<p>
+  <b>Task number:</b>
+  <%=h @deliverable.task_number %>
+</p>
+
+<p>
+  <b>Deliverable file name:</b>
+  <%=h @deliverable.deliverable_file_name %>
+</p>
+
+<p>
+  <b>Deliverable content type:</b>
+  <%=h @deliverable.deliverable_content_type %>
+</p>
+
+<p>
+  <b>Deliverable file size:</b>
+  <%=h @deliverable.deliverable_file_size %>
+</p>
+
+<p>
+  <b>Deliverable updated at:</b>
+  <%=h @deliverable.deliverable_updated_at %>
+</p>
+<p>
+  <b>Deliverable url:</b>
+  <%=h @deliverable.deliverable.url %>
+</p>
+
 
 <%= link_to 'Edit', edit_deliverable_path(@deliverable) %> |
 <%= link_to 'Back', deliverables_path %>
