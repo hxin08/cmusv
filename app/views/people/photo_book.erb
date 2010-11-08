@@ -3,7 +3,73 @@
 <div class="right_link" ><%= link_to 'See people', :action => 'index' %><br/>
 <%= link_to 'See phone book', :action=>'phone_book' %></div>
 
+<% content_for :tablesorter do %>
+  <%= javascript_include_tag 'tablesorter' %>
+  <%= javascript_include_tag 'tablesorter_filter' %>
+<script type="text/javascript">
+
+
+$(document).ready(function()
+ {
+       if ($("#filterBoxOne").attr("disabled") == true)
+       {
+         $('#filterBoxOne').val('');
+         $('#filterBoxOne').removeAttr("disabled");
+         $('#filterBoxOne').focus();
+        }
+        $("#people_table").tablesorter({widgets: ['zebra'],
+                                        sortList: [[0,0]]})
+            .tablesorterFilter({ filterContainer: $("#filterBoxOne"),
+                filterClearContainer: $("#filterClearOne"),
+                filterColumns: [1],
+                filterCaseSensitive: false
+            });
+      }
+);
+
+function toggleStudents()
+{
+  /* we don't use .toggle since the state may be inaccurate from a page reload */
+  if ($('#student_checkbox').is(':checked')) {
+    $(".student").show();
+  } else {
+    $(".student").hide();
+  }
+  $("#filterBoxOne").trigger("keyup");
+}
+
+function toggleStaff()
+{
+  if ($('#staff_checkbox').is(':checked')) {
+    $(".staff").show();
+  } else {
+    $(".staff").hide();
+  }
+  $("#filterBoxOne").trigger("keyup");
+}
+</script>
+<% end %>
+
+
+
+<div style="float:none"><%= render :partial => "tablesorter_filter_box" %><label>Show Students</label><input type="checkbox" id="student_checkbox" onchange="toggleStudents()" value="1" checked="checked" />
+  <label>Show Staff</label><input type="checkbox" id="staff_checkbox" onchange="toggleStaff()" value="1" checked="checked" />
+</div>
+
 <% for person in @people %>
-    <div width="200"><%= render :partial=>'people/twiki_photo_link', :locals => {:person => person} %></div>
+    <div width="200">
+      <div class=''>
+        <table id="people_table" class="tablesorter" border="1">
+            <thead>
+              <tr>
+                <th>Person Name</th>
+              </tr>
+            </thead>
+          <tbody>
+          <%= render :partial=>'people/twiki_photo_link', :locals => {:person => person} %>
+          </tbody>
+        </table>
+      </div>
+     </div>
 <% end %>
 <br/>

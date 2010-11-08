@@ -138,7 +138,7 @@ end
 
 Factory.define :betty_ross, :parent => :person do |p|
   p.is_student 1
-  p.is_part_time 1
+  p.is_part_time 0
   p.graduation_year "2021"
   p.masters_program  "SE"
   p.masters_track  "DM"
@@ -153,6 +153,7 @@ Factory.define :betty_ross, :parent => :person do |p|
   p.local_near_remote "Near"
   p.work_state "Arizona"
   p.tigris "bross"
+  p.is_active 0
 end
 
 Factory.define :charlie_moss, :parent => :person do |p|
@@ -172,6 +173,7 @@ Factory.define :charlie_moss, :parent => :person do |p|
   p.local_near_remote "Near"
   p.work_state "Ohio"
   p.tigris "cmoss"
+  p.is_active 0
 end
 
 
@@ -182,7 +184,28 @@ Factory.define :architecture, :class => Course do |c|
  c.semester "Summer"
  c.mini "Both"
  c.year "2008"
+ c.short_name "FSE"
 end
+
+Factory.define :foundations, :class => Course do |c|
+ c.name "Foundations for Software Engineering"
+ c.number "96-705"
+ c.semester "Fall"
+ c.mini "Both"
+ c.year "2010"
+ c.short_name "FSE"
+end
+
+
+Factory.define :metrics, :class => Course do |c|
+ c.name "Metrics for Software Engineering"
+ c.number "96-705"
+ c.semester "Fall"
+ c.mini "Both"
+ c.year "2010"
+ c.short_name "MfSE"
+end
+
 
 
 Factory.define :team_triumphant, :class => Team do |t|
@@ -193,6 +216,17 @@ Factory.define :team_triumphant, :class => Team do |t|
  t.person_name "Awe Smith"
  t.person_name2 "Betty Ross"
  t.person_name3 "Charlie Moss"
+end
+
+
+Factory.define :team_ant, :class => Team do |t|
+ t.name "Team ANT"
+ t.email "fall-2010-ant@sv.cmu.edu"
+ t.tigris_space "http://ant.tigris.org/servlets/ProjectDocumentList"
+ t.twiki_space "http://info.sv.cmu.edu/twiki/bin/view/Graffiti/WebHome"
+ t.person_name "Isuru Warn"
+ t.person_name2 "Arlette Umuhoza"
+ t.person_name3 "Ian Zhang"
 end
 
 Factory.define :ian_zhang, :parent => :person do |p|
@@ -211,7 +245,7 @@ Factory.define :ian_zhang, :parent => :person do |p|
 end
 
 
-Factory.create(:todd)
+todd = Factory.create(:todd)
 martin = Factory.create(:martin)
 Factory.create(:ed)
 Factory.create(:chris)
@@ -224,7 +258,9 @@ Factory.create(:charlie_moss)
 Factory.create(:ian_zhang)
 
 architecture = Factory.create(:architecture)
-
+metrics = Factory.create(:metrics)
+foundations = Factory.create(:foundations)
 
 Factory.create(:team_triumphant, :primary_faculty_id => martin.id, :course_id=> architecture)
-
+Factory.create(:team_ant, :primary_faculty_id => martin.id, :course_id=> metrics)
+#Factory.create(:team_ant, :primary_faculty_id => todd.id, :course_id=> foundations)
