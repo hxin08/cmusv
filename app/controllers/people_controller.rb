@@ -21,6 +21,7 @@ class PeopleController < ApplicationController
       end
     else
       #@people = Person.find(:all, :conditions => ['is_active = ?', true],  :order => "first_name ASC, last_name ASC")
+      #branch:PersonSearch - find active AND inactive users
       @people = Person.find(:all, :order => "first_name ASC, last_name ASC")
     end
 
