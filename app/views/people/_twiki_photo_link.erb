@@ -1,9 +1,8 @@
-    <!--tr class= "<#%if person.is_student>student<#% end %> <#% if person.is_staff %>staff<#%end%>">
-       <td>
-        <a href='http://info.sv.cmu.edu/twiki/bin/view/Main/<#%=person.twiki_name%>' target='_top'>
-          <%#= image_tag(person.image_uri, :border=>0, :height=>200, :alt=>person.human_name+" image") %></a>
-       </td>
-
-     </tr-->
-     <tr class="tablesorter <%if person.is_student %>student<% end %> <% if person.is_staff %>staff<%end%>"><td class=''><%=person.human_name%></td></tr>
-
+<div class='team_member_photo <%if !person.is_active %>inactive<% end %> <%if person.is_student %>student<% end %> <% if person.is_staff %>staff<%end%>'>
+   <a href='http://info.sv.cmu.edu/twiki/bin/view/Main/<%=person.twiki_name%>' target='_top'>
+            <%= image_tag(person.image_uri, :border=>0, :height=>200, :alt=>person.human_name+" image") %></a>
+<br/>
+  <div class='label'>
+    <p class="<%if !person.is_active %>inactive<% end %> <%if person.is_student %>student<% end %> <% if person.is_staff %>staff<%end%>"><%=person.human_name%></p>
+  </div>
+</div>

@@ -209,4 +209,12 @@ class Person < ActiveRecord::Base
 #     end
 #   end
 
+#   def search_person_name(search_string)
+#     search_string = params[:filterBoxOne].downcase
+#      @people = Person.find(:all, :conditions => [' LOWER(first_name) LIKE ? || LOWER(last_name) LIKE ?',
+#          "%#{search_string}%", "%#{search_string}%"],
+#          :order => "first_name ASC, last_name ASC")
+#      return @people
+#   end
+
 end

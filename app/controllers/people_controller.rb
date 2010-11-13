@@ -39,7 +39,16 @@ class PeopleController < ApplicationController
   end
 
   def photo_book
-    index
+    if params[:filterBoxOne]
+      searchString = params[:filterBoxOne].downcase
+      @people = Person.find(:all, :conditions => [' LOWER(first_name) LIKE ? || LOWER(last_name) LIKE ?',
+          "%#{searchString}%", "%#{searchString}%"],
+          :order => "first_name ASC, last_name ASC")
+      #Person.search_person_name(params[:filterBoxOne])
+    else
+      index
+    end
+
   end
 
 
