@@ -1,6 +1,8 @@
 class DeliverablesController < ApplicationController
 
   layout 'cmu_sv'
+  before_filter :require_user
+
   # GET /deliverables
   # GET /deliverables.xml
   def index
@@ -27,6 +29,11 @@ class DeliverablesController < ApplicationController
   # GET /deliverables/new.xml
   def new
     @deliverable = Deliverable.new
+    @deliverable.person_id = current_user.id
+
+#    if !params[:course_id].nil?
+#    @deliverable.course_id = params[:course_id]
+#    end
 
     respond_to do |format|
       format.html # new.html.erb

@@ -134,7 +134,8 @@ Factory.define :yu, :parent => :person  do |p|
   p.last_name "Zhang"
   p.human_name "yu Zhang"
   p.email "ian.zhang@sv.cmu.edu"
-  p.is_staff 1
+  #p.is_staff 1
+  p.is_student 1
 end
 
 Factory.define :asem_radhwi, :parent => :person do |p|

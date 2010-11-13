@@ -1,0 +1,49 @@
+<h1>Listing deliverables</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Comments</th>
+    <th>Deliverable type</th>
+    <th>Person</th>
+    <th>Team</th>
+    <th>Course</th>
+    <th>Task number</th>
+    <th>Deliverable file name</th>
+    <th>Feedback file name</th>
+  </tr>
+
+<% @deliverables.each do |deliverable| %>
+  <tr>
+    <td><%=h deliverable.name %></td>
+    <td><%=h deliverable.comments %></td>
+    <td><%=h deliverable.deliverable_type %></td>
+    <td><%=h deliverable.person_id %></td>
+    <td><%=h deliverable.team_id %></td>
+    <td><%=h deliverable.course_id %></td>
+    <td><%=h deliverable.task_number %></td>
+    <td><%= link_to 'Download', deliverable.deliverable.url %></td>
+
+    <td>
+    <% if !deliverable.feedback_file_name.nil? %>
+    <%= link_to  'Download',deliverable.feedback.url %>
+    <% else %>
+    Empty
+    <% end %>
+      </td>
+
+    <td><%= link_to 'Edit', edit_feedback_path(deliverable) %></td>
+    <td>
+    <% if !deliverable.feedback_file_name.nil? %>
+    <td><%= link_to 'Del', {:action=>"del", :id=>deliverable},:confirm => 'Are you sure?' %></td>
+
+    <% end %>
+      </td>
+    
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New deliverable', :action=>"new" %>

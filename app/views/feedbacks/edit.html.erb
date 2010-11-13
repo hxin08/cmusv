@@ -1,0 +1,33 @@
+<% form_for @deliverable, :url=>{:controller=>'feedbacks',:action=>'update'},
+ :html => { :multipart => true } do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :person_id %><br />
+    <%=h @deliverable.person_id %>
+  </p>
+  <p>
+    <%= f.label :team_id %><br />
+    <%=h @deliverable.team_id %>
+  </p>
+  <p>
+    <%= f.label :course_id %><br />
+    <%=h @deliverable.course_id %>
+  </p>
+  <p>
+    <%= f.label :task_number %><br />
+    <%=h @deliverable.task_number %>
+  </p>
+  <p>
+    <b>Deliverable:</b>
+    <%= link_to 'Download', @deliverable.deliverable.url %>
+  </p>
+  <p>
+    <%= f.label :feedback, "Upload your feedback" %>
+    <%= f.file_field :feedback %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
